@@ -18,8 +18,9 @@
 		}
 
 		public function load(){
+			
 			if(is_array($_POST) && !empty($_POST['password'])) return $this->__trigger();
-			return NULL;
+			
 		}
 
 		public static function documentation(){
@@ -28,7 +29,9 @@
 
 		protected function __trigger(){
 			session_start();
+			
 			$_SESSION['passwordmonster']['password'] = $_POST['password'];
+			
 			return;
 		}
 	}

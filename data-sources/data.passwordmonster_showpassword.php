@@ -1,7 +1,7 @@
 <?php
 
 	if(!defined('__IN_SYMPHONY__')) die('<h2>Error</h2><p>You cannot directly access this file</p>');
-
+	require_once(SYMPHONY.'/lib/toolkit/class.datasource.php');
 	Final Class datasourcePasswordmonster_showpassword Extends DataSource{
 
 		function about(){
@@ -16,8 +16,10 @@
 				'release-date' => '2010-12-19',
 			);
 		}
-
-		public function grab(){
+		
+		public function execute(){
+			
+			
 			session_start();
 			if(!is_array($_SESSION['passwordmonster']) || empty($_SESSION['passwordmonster'])) return NULL;
 			$xml = new XMLElement('password-monster');

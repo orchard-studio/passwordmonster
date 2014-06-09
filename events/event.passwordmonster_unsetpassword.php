@@ -18,7 +18,7 @@
 		}
 
 		public function load(){
-			return $this->__trigger();
+			if(isset($_POST['logout'])) return $this->__trigger();
 		}
 
 		public static function documentation(){
@@ -26,10 +26,13 @@
 		}
 
 		protected function __trigger(){
+			
 			$xml = new XMLElement('password-monster');
 			session_start();
-			if ($_SESSION['passwordmonster']){
-				unset($_SESSION['passwordmonster']);
+			
+			if ($_SESSION['passwordmonster']){	
+				
+				unset($_SESSION['passwordmonster']);													
 				if (!$_SESSION['passwordmonster']){
 					$xml->setAttribute('unset', 'success');
 				}
