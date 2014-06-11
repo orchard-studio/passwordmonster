@@ -22,7 +22,7 @@
 		}
 
 		public static function documentation(){
-			return 'Use "$_POST[logout] in form and attach event in order to unset pasword on same page as login"';
+			return 'Use "$_POST[logout]" in form and attach event in order to unset pasword on same page as login';
 		}
 
 		protected function __trigger(){
